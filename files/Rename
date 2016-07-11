@@ -1,0 +1,142 @@
+#!/usr/bin/python3
+
+"""
+To install move this file to ~/.local/share/nautilus/scripts
+"""
+
+import re
+import unicodedata
+from pathlib import Path
+
+# from gi.repository import Gtk
+
+import mutagen
+from mutagen.easyid3 import EasyID3
+from mutagen.flac import FLAC
+from mutagen.mp3 import MP3
+
+from slugify import Slugify
+
+
+PRETRANLATE_DIR_DICT = {
+    ':': '.',
+    '"': "'",
+    '/': '-',
+    '\\': '-',
+    '|': '-',
+}
+
+sanitize_filename = Slugify(
+    pretranslate=PRETRANLATE_DIR_DICT,
+    translate=None,
+    separator=' ',
+    safe_chars='!#$%&\'()+,-.;=@[]^_`{}~',
+    max_length=250,
+)
+
+
+FILE_NAME_TEMPLATE = '{track_number:02d} - {title}{ext}'
+
+
+def collect_audio_files():
+    files = []
+
+    for file in Path.cwd().iterdir():
+        # if file.is_file() and file.name.lower().endswith(('.mp3', '.flac')):
+        if file.is_file() and file.suffix.lower() in ('.mp3', '.flac'):
+            files.append(file)
+
+    files.sort()
+
+    return files
+
+
+def rename_flac_by_tags():
+
+    audio = FLAC("example.flac")
+
+    audio["title"] = "An example"
+    audio.pprint()
+    audio.save()
+
+def get_file_names_rename_text(files):
+    number = 1
+    text = ''
+    # Rename audio files
+    for file in files:
+        title = re.findall(r'\d{1,2}[\s)._-]*(.+)', file.name)[0]
+        suggested_file_name = FILE_NAME_TEMPLATE.format(number=number, title=title)
+        # file.rename()
+        number += 1
+        text += suggested_file_name + '\n'
+
+    return text
+
+
+def get_id3_tags_rename_text(file_paths, rename=True):
+    text = ''
+    for file_path in file_paths:
+        ext = file_path.suffix.lower()
+        if ext == '.mp3':
+            info = EasyID3(str(file_path))
+        else:
+            info = FLAC(str(file_path))
+
+        track_number = info['tracknumber'][0]  # "9/10"
+        track_number = re.findall('^(\d+)', track_number)[0]  # "9"
+        track_number = int(track_number)  # 9
+        print(track_number)
+
+        title = info['title'][0]
+        suggested_file_name = FILE_NAME_TEMPLATE.format(track_number=track_number, title=title, ext=ext)
+        suggested_file_name = unicodedata.normalize('NFC', suggested_file_name)
+        suggested_file_name = sanitize_filename(suggested_file_name)
+        if rename:
+            file_path.rename(suggested_file_name)
+        text += suggested_file_name + '\n'
+
+    return text
+
+
+def rename_by_file_names():
+    pass
+
+
+# class RenamerWindow(Gtk.Window):
+#
+#     def __init__(self):
+#         super(RenamerWindow, self).__init__(title='Renamer')
+#
+#         grid = Gtk.Grid()
+#         self.add(grid)
+#
+#         button1 = Gtk.Button(label="Button 1")
+#         button2 = Gtk.Button(label="Button 2")
+#         button3 = Gtk.Button(label="Button 3")
+#         button4 = Gtk.Button(label="Button 4")
+#         button5 = Gtk.Button(label="Button 5")
+#         button6 = Gtk.Button(label="Button 6")
+#
+#         grid.add(button1)
+#         grid.attach(button2, 1, 0, 2, 1)
+#         grid.attach_next_to(button3, button1, Gtk.PositionType.BOTTOM, 1, 2)
+#         grid.attach_next_to(button4, button3, Gtk.PositionType.RIGHT, 2, 1)
+#         grid.attach(button5, 1, 2, 1, 1)
+#         grid.attach_next_to(button6, button5, Gtk.PositionType.RIGHT, 1, 1)
+
+def main():
+    auidio_file_paths = collect_audio_files()
+    get_id3_tags_rename_text(auidio_file_paths)
+
+    # window = Gtk.Window()
+    # window = RenamerWindow()
+    # window.connect("delete-event", Gtk.main_quit)
+    # window.show_all()
+    # Gtk.main()
+
+
+if __name__ == '__main__':
+    main()
+    # print(get_id3_tags_rename_text(collect_audio_files(), rename=False))
+    # auidio_files_list = collect_audio_files()
+    # get_id3_tags_rename_text(auidio_files_list)
