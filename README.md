@@ -11,7 +11,7 @@
 
 1. Create swap file
     ```console
-    sudo fallocate --length 1G /swap
+    sudo fallocate /swap --length 1G
     sudo mkswap --check /swap
     sudo chmod u=rw,g=,o= /swap
     sudo swapon /swap
@@ -106,6 +106,12 @@
 
     # Maps
     sudo aptitude purge -y gnome-maps
+    
+    # Simple Scan
+    sudo aptitude purge -y simple-scan    
+    
+    # Screen Reader
+    sudo aptitude purge -y gnome-orca    
     ```
 
 1. Install NVidia driver
