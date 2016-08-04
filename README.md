@@ -1,8 +1,12 @@
+Config Ubuntu GNOME after install
+=================================
 
-0. Prepare files
+0. **Before OS install**
     - Keep files
         - `.ssh/`
-        - `.PyCharm2016.*/`
+        - `.PyCharmYYYY.N/`
+        
+1. Install OS
 
 1. Update OS
     ```console
@@ -25,12 +29,8 @@
 
     sudo aptitude install -y ubuntu-restricted-extras
     sudo aptitude install -y vlc
-    sudo aptitude install -y nautilus-dropbox ??????????
 
     sudo aptitude install -y flac cuetools shntool      # Splitting FLAC
-
-    sudo add-apt-repository ppa:starws-box/deadbeef-player  ???????????
-    sudo aptitude install deadbeef
     ```
 
 1. Install dev packages
@@ -51,20 +51,27 @@
     sudo pip3 install mutagen
     ```
 
-1. Install Gnome Shell extensions
-    - [Hide Top Panel](https://extensions.gnome.org/extension/740/hide-top-panel/)
-    - [Suspend Button](https://extensions.gnome.org/extension/826/suspend-button/)
+1. Install Gnome Shell extensions using __Firefox__
+    - [Hide Top Panel](https://extensions.gnome.org/extension/740/hide-top-panel/) extension page
+    - [Suspend Button](https://extensions.gnome.org/extension/826/suspend-button/) extension page 
 
 1. Install programs
-    - [Google Chrome](https://google.com/search?q=google+chrome+install+linux)
+    - Google [Google Chrome](https://google.com/search?q=google+chrome+install+linux)
+        or alternatively:
         ```console
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output-document=google-chrome.deb
         sudo dpkg -i google-chrome.deb
         rm google-chrome.deb
         ```
-    - [DeaDBeeF](https://google.com/search?q=deadbeef+install)
-    - [Dropbox](https://google.com/search?q=deadbeef+install)
-    - [PyCharm](https://google.com/search?q=pycharm+install)
+    - Google [DeaDBeeF](https://google.com/search?q=deadbeef+install)
+    - Google [Dropbox](https://google.com/search?q=deadbeef+install)
+        or alternatively:
+        ```console
+        sudo aptitude install -y nautilus-dropbox
+        ```
+    - Google [PyCharm](https://google.com/search?q=pycharm+install)  
+        Put to `~/PyCharm/`. We will use it to merge configs.  
+        Run:
         ```console
         ~/PyCharm/bin/pycharm.sh
         ```
