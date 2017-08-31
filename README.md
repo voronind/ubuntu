@@ -51,7 +51,8 @@ Config Ubuntu GNOME after install
     sudo pip3 install mutagen
     ```
 
-1. Install Gnome Shell extensions using __Firefox__
+1. Install Gnome Shell extensions
+    - `sudo aptitude install -y chrome-gnome-shell`
     - [Hide Top Panel](https://extensions.gnome.org/extension/740/hide-top-panel/) extension page
     - [Suspend Button](https://extensions.gnome.org/extension/826/suspend-button/) extension page 
 
