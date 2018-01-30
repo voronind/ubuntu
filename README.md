@@ -71,10 +71,10 @@ Config Ubuntu GNOME after install
         sudo aptitude install -y nautilus-dropbox
         ```
     - Google [PyCharm](https://google.com/search?q=pycharm+install)  
-        Put to `~/PyCharm/`. We will use it to merge configs.  
+        Put to `~/pycharm/`. **We will use it to merge configs.**  
         Run:
         ```console
-        ~/PyCharm/bin/pycharm.sh
+        ~/pycharm/bin/pycharm.sh
         ```
 
 1. Uninstall packages
@@ -141,7 +141,7 @@ Config Ubuntu GNOME after install
 
     blkid
 
-    sudo ~/PyCharm/bin/pycharm.sh merge fstab /etc/fstab /etc/fstab
+    sudo ~/pycharm/bin/pycharm.sh merge fstab /etc/fstab /etc/fstab
 
     mount --all
     ```
@@ -192,13 +192,13 @@ Config Ubuntu GNOME after install
     ```console
     wget https://github.com/dimka665/ubuntu-gnome/raw/master/files/.gitconfig -O git-config
 
-    ~/PyCharm/bin/pycharm.sh merge git-config ~/.gitconfig ~/.gitconfig
+    ~/pycharm/bin/pycharm.sh merge git-config ~/.gitconfig ~/.gitconfig
     ```
 
 1. Config sysctl
     ```console
     wget https://github.com/dimka665/ubuntu-gnome/raw/master/files/sysctl.conf
-    sudo ~/PyCharm/bin/pycharm.sh merge sysctl.conf /etc/sysctl.conf /etc/sysctl.conf
+    sudo ~/pycharm/bin/pycharm.sh merge sysctl.conf /etc/sysctl.conf /etc/sysctl.conf
 
     sudo sysctl --load
     ```
