@@ -8,12 +8,12 @@ Config Ubuntu GNOME after install
         
 1. Install OS
 
-1. Update OS
+2. Update OS
     ```console
     sudo apt-get update && sudo apt-get dist-upgrade
     ```
 
-1. Create swap file
+3. Create swap file
     ```console
     sudo fallocate /swap --length 1G
     sudo mkswap --check /swap
@@ -23,7 +23,7 @@ Config Ubuntu GNOME after install
     swapon --show
     ```
 
-1. Install packages
+4. Install packages
     ```console
     sudo apt-get install -y aptitude
 
@@ -33,7 +33,7 @@ Config Ubuntu GNOME after install
     sudo aptitude install -y flac cuetools shntool      # Splitting FLAC
     ```
 
-1. Install dev packages
+5. Install dev packages
     ```console
     sudo aptitude install -y git
 
@@ -50,13 +50,16 @@ Config Ubuntu GNOME after install
     # install Renamer dependency
     sudo pip3 install mutagen
     ```
+    
+6. Install `pyenv`  
+    [https://github.com/pyenv/pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation)
 
-1. Install Gnome Shell extensions
+7. Install Gnome Shell extensions
     - `sudo aptitude install -y chrome-gnome-shell`
     - [Hide Top Panel](https://extensions.gnome.org/extension/740/hide-top-panel/) extension page
     - [Suspend Button](https://extensions.gnome.org/extension/826/suspend-button/) extension page 
 
-1. Install programs
+8. Install programs
     - Google [Google Chrome](https://google.com/search?q=google+chrome+install+linux)
         or alternatively:
         ```console
@@ -77,7 +80,7 @@ Config Ubuntu GNOME after install
         ~/pycharm/bin/pycharm.sh
         ```
 
-1. Uninstall packages
+9. Uninstall packages
     ```console
     # Video player
     sudo aptitude purge -y totem totem-plugins
@@ -122,7 +125,7 @@ Config Ubuntu GNOME after install
     sudo aptitude purge -y gnome-orca    
     ```
 
-1. Install NVidia driver
+10. Install NVidia driver
     ```console
     ubuntu-drivers devices
 
@@ -134,7 +137,7 @@ Config Ubuntu GNOME after install
     ```
    Restart OS
 
-1. Config FS table
+11. Config FS table
     ```console
     sudo mkdir /media/e /media/data
     #sudo chown dimka /media/e /media/data
@@ -146,7 +149,7 @@ Config Ubuntu GNOME after install
     mount --all
     ```
 
-1. Config Gnome Shell
+12. Config Gnome Shell
     ```console
     gsettings list-recursively | grep SOME
 
@@ -180,7 +183,7 @@ Config Ubuntu GNOME after install
     gsettings set org.gnome.nautilus.preferences default-folder-viewer list-view
     ```
 
-1. Config Nautilus
+13. Config Nautilus
     ```console
     touch ~/Templates/Text.txt
 
@@ -188,14 +191,14 @@ Config Ubuntu GNOME after install
     chmod a+x ~/.local/share/nautilus/scripts/Rename
     ```
 
-1. Config Git
+14. Config Git
     ```console
     wget https://github.com/dimka665/ubuntu-gnome/raw/master/files/.gitconfig -O git-config
 
     ~/pycharm/bin/pycharm.sh merge git-config ~/.gitconfig ~/.gitconfig
     ```
 
-1. Config sysctl
+15. Config sysctl
     ```console
     wget https://github.com/dimka665/ubuntu-gnome/raw/master/files/sysctl.conf
     sudo ~/pycharm/bin/pycharm.sh merge sysctl.conf /etc/sysctl.conf /etc/sysctl.conf
@@ -203,7 +206,7 @@ Config Ubuntu GNOME after install
     sudo sysctl --load
     ```
 
-1. Config auto update
+16. Config auto update
 
 
 
