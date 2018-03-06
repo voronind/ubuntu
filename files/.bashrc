@@ -127,3 +127,6 @@ alias gg='git status'
 
 # Activate Virtualenvwrapper commands
 source `which virtualenvwrapper.sh`
+
+# To enable local installed programs (pipenv)
+export PATH="$PATH:~/.local/bin/"
