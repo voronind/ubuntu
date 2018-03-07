@@ -156,21 +156,11 @@ Config Ubuntu GNOME after install
 
 12. Config Gnome Shell
     ```console
-    gsettings list-recursively | grep SOME
+    gsettings list-recursively | grep "<Ctrl><Alt>"
 
     # Switch language by <Ctrl>Space
     gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward []
     gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Control>Space']"
-
-    # Turn off <Alt>LMB to move window cause PyCharm uses <Shift><Alt>LMB for Multicursor
-    gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier ""
-
-    # Turn off <Alt>F7 to move window cause PyCharm uses it for Find usages
-    gsettings set org.gnome.desktop.wm.keybindings begin-move []
-
-    # Turn off <Ctrl><Alt>Up/Down to switch workspace cause PyCharm uses it in Stack navigation
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
 
     # Workspaces
     gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
@@ -186,6 +176,22 @@ Config Ubuntu GNOME after install
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
     gsettings set org.gnome.nautilus.preferences default-sort-order name
     gsettings set org.gnome.nautilus.preferences default-folder-viewer list-view
+    ```
+    
+12. Turn off Gnome hotkeys
+    ```commandline
+    # <Alt>LMB: Move window -> PyCharm Multicursor <Shift><Alt>LMB
+    gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier ""
+
+    # <Alt>F7: Move window -> PyCharm Find usages
+    gsettings set org.gnome.desktop.wm.keybindings begin-move []
+
+    # <Ctrl><Alt>Up/Down: Switch workspace -> PyCharm Stack navigation
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
+
+    # <Ctrl><Alt>S: Window toggle shaded -> PyCharm Settings
+    gsettings set org.gnome.desktop.wm.keybindings toggle-shaded []
     ```
 
 13. Config Nautilus
