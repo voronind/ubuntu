@@ -55,7 +55,7 @@ Config Ubuntu GNOME after install
     [https://github.com/pyenv/pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation)
 
 6. Install `pipenv`
-    ```commandline
+    ```console
     sudo pip install --user pipenv
     ```
 
@@ -179,7 +179,7 @@ Config Ubuntu GNOME after install
     ```
     
 12. Turn off Gnome hotkeys
-    ```commandline
+    ```console
     # <Alt>LMB: Move window -> PyCharm Multicursor <Shift><Alt>LMB
     gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier ""
 
