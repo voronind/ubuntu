@@ -186,9 +186,11 @@ Config Ubuntu GNOME after install
     # <Alt>F7: Move window -> PyCharm Find usages
     gsettings set org.gnome.desktop.wm.keybindings begin-move []
 
-    # <Ctrl><Alt>Up/Down: Switch workspace -> PyCharm Stack navigation
+    # <Ctrl><Alt>Arrow: Switch workspace -> PyCharm Navigation
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
 
     # <Ctrl><Alt>S: Window toggle shaded -> PyCharm Settings
     gsettings set org.gnome.desktop.wm.keybindings toggle-shaded []
