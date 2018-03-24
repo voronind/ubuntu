@@ -181,7 +181,7 @@ Config Ubuntu GNOME after install
 12. Turn off Gnome hotkeys
     ```console
     # <Alt>LMB: Move window -> PyCharm Multicursor <Shift><Alt>LMB
-    gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier ""
+    gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier disable
 
     # <Alt>F7: Move window -> PyCharm Find usages
     gsettings set org.gnome.desktop.wm.keybindings begin-move []
