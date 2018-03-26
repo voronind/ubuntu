@@ -33,31 +33,19 @@ Config Ubuntu GNOME after install
     sudo aptitude install -y flac cuetools shntool      # Splitting FLAC
     ```
 
-5. Install dev packages
+5. Install packages for development
     ```console
-    sudo aptitude install -y git
-
-    sudo aptitude install -y python-dev
-    sudo aptitude install -y python-pip
-
-    sudo aptitude install -y python3-dev
-    sudo aptitude install -y python3-pip
-
-    sudo pip3 install -U virtualenvwrapper
-
-    sudo pip install -U ansible
+    sudo aptitude install -y git python3-dev
+    
+    python3 -m pip install --user -U pip pipenv setuptools wheel twine keyring
+    python3 -m pip install --user -U ansible
 
     # install Renamer dependency
-    sudo pip3 install mutagen
+    python3 -m pip install --user -U mutagen
     ```
     
-6. Install [pyenv](https://github.com/pyenv/pyenv)
-    [https://github.com/pyenv/pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation)
-
-6. Install `pipenv`
-    ```console
-    sudo pip install --user pipenv
-    ```
+6. Install [pyenv](https://github.com/pyenv/pyenv)  
+    E.g. using [https://github.com/pyenv/pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation)
 
 7. Install Gnome Shell extensions
     - `sudo aptitude install -y chrome-gnome-shell`
