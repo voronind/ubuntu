@@ -49,8 +49,8 @@ Config Ubuntu GNOME after install
 
 7. Install Gnome Shell extensions
     - `sudo aptitude install -y chrome-gnome-shell`
-    - [Hide Top Panel](https://extensions.gnome.org/extension/740/hide-top-panel/) extension page
-    - [Suspend Button](https://extensions.gnome.org/extension/826/suspend-button/) extension page 
+    - [Hide Top Panel](https://extensions.gnome.org/extension/740/hide-top-panel/)
+    - [Suspend Button](https://extensions.gnome.org/extension/826/suspend-button/)
 
 8. Install programs
     - Google [Google Chrome](https://google.com/search?q=google+chrome+install+linux)
