@@ -38,6 +38,8 @@ Config Ubuntu GNOME after install
     sudo aptitude install -y git python3-dev
     
     python3 -m pip install --user -U pip pipenv setuptools wheel twine keyring
+    keyring set https://upload.pypi.org/legacy/ dimka.dimka
+    
     python3 -m pip install --user -U ansible
 
     # install Renamer dependency
@@ -128,7 +130,7 @@ Config Ubuntu GNOME after install
 
     sudo nvidia-xconfig
     ```
-   Restart OS
+    Restart OS
 
 11. Config FS table
     ```console
@@ -146,7 +148,7 @@ Config Ubuntu GNOME after install
     ```console
     gsettings list-recursively | grep "<Ctrl><Alt>"
 
-    # Switch language by <Ctrl>Space
+    # Switch language by Ctrl+Space
     gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward []
     gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Control>Space']"
 
@@ -166,21 +168,21 @@ Config Ubuntu GNOME after install
     gsettings set org.gnome.nautilus.preferences default-folder-viewer list-view
     ```
     
-12. Turn off Gnome hotkeys
+12. Turn off Gnome hot-keys
     ```console
-    # <Alt>LMB: Move window -> PyCharm Multicursor <Shift><Alt>LMB
+    # Alt+LMB: Move window -> PyCharm Multicursor
     gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier FF
 
-    # <Alt>F7: Move window -> PyCharm Find usages
+    # Alt+F7: Move window -> PyCharm Find usages
     gsettings set org.gnome.desktop.wm.keybindings begin-move []
 
-    # <Ctrl><Alt>Arrow: Switch workspace -> PyCharm Navigation
+    # Ctrl+Alt+Arrow: Switch workspace -> PyCharm Navigation
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
 
-    # <Ctrl><Alt>S: Window toggle shaded -> PyCharm Settings
+    # Ctrl+Alt+S: Window toggle shaded -> PyCharm Settings
     gsettings set org.gnome.desktop.wm.keybindings toggle-shaded []
     ```
 
