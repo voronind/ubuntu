@@ -9,34 +9,44 @@ get() {
     local path="$2"
     local mode="$3"
 
-    if [[ $path == home/* ]]; then
-        local local_path="$HOME${path#home}"
+    if [[ $path == ~/* ]]; then
+        local repo_path="$repo/home${path#"$HOME"}"
     else
-        local local_path="/$path"
+        local repo_path="$repo$path"
         local merge="sudo $merge"
     fi
 
     if [[ $action == "merge" ]]; then
-        wget $repo/$path -O $tmp
-        $merge $local_path $tmp $local_path
+        wget $repo_path -O $tmp
+        $merge $path $tmp $path
         rm $tmp
+    elif [[ $action == "copy" ]]; then
+        wget $repo_path -O $path
     else
-        wget $repo/$path -O $local_path
+        echo "You must specify 'merge' or 'copy' command."
     fi
 
     if [[ $mode == "x" ]]; then
-        chmod +x $local_path
+        chmod +x $path
     fi
 }
 
-get merge etc/fstab
-get merge etc/sysctl.conf
-get merge home/.bashrc
-get merge home/.cookiecutterrc
-get merge home/.gitconfig
-get merge home/.pypirc
+main() {
+    get merge /etc/fstab
+    get merge /etc/sysctl.conf
+    get merge ~/.bashrc
+    get merge ~/.cookiecutterrc
+    get merge ~/.gitconfig
+    get merge ~/.pypirc
 
-get copy home/.local/read-editor.sh  x
-get copy home/.local/share/nautilus/scripts/Rename  x
+    get copy ~/.local/read-editor.sh  x
+    get copy ~/.local/share/nautilus/scripts/Rename  x
 
-touch ~/Templates/Text.txt
+    touch ~/Templates/Text.txt
+}
+
+if [ -z "$1" ]; then
+    main
+else
+    get $1 "$2" $3
+fi

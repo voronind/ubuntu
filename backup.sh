@@ -5,18 +5,26 @@ repo="$(dirname "$0")/files"
 backup() {
     local path="$1"
 
-    if [[ $path == home/* ]]; then
-        local local_path="$HOME${path#home}"
+    if [[ $path == ~/* ]]; then
+        local repo_path="$repo/home${path#"$HOME"}"
     else
-        local local_path="/$path"
+        local repo_path="$repo$path"
     fi
 
-    cp "$local_path" "$repo/$path"
+    cp "$path" "$repo_path"
 }
 
-backup etc/fstab
-backup etc/sysctl.conf
-backup home/.bashrc
-backup home/.cookiecutterrc
-backup home/.gitconfig
-backup home/.pypirc
+main() {
+    backup /etc/fstab
+    backup /etc/sysctl.conf
+    backup ~/.bashrc
+    backup ~/.cookiecutterrc
+    backup ~/.gitconfig
+    backup ~/.pypirc
+}
+
+if [ -z "$1" ]; then
+    main
+else
+    backup "$1"
+fi
