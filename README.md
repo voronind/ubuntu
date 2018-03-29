@@ -2,6 +2,13 @@ Config Ubuntu GNOME after install
 =================================
 
 0. **Before OS install**
+    - Backup files
+        ```console
+        ./baskup.sh
+        git add .
+        git commit
+        git push
+        ```
     - Keep files
         - `.ssh/`
         - `.PyCharmYYYY.N/`
@@ -126,7 +133,7 @@ Config Ubuntu GNOME after install
 
     sudo add-apt-repository ppa:ubuntu-x-swat/x-updates && sudo aptitude update
 
-    sudo aptitude install nvidia-XXX nvidia-settings
+    sudo aptitude install nvidia-340 nvidia-settings
 
     sudo nvidia-xconfig
     ```
@@ -186,27 +193,9 @@ Config Ubuntu GNOME after install
     gsettings set org.gnome.desktop.wm.keybindings toggle-shaded []
     ```
 
-13. Config Nautilus
+13. Restore files
     ```console
-    touch ~/Templates/Text.txt
-
-    wget https://github.com/dimka665/ubuntu-gnome/raw/master/files/Rename --output-document=~/.local/share/nautilus/scripts
-    chmod a+x ~/.local/share/nautilus/scripts/Rename
-    ```
-
-14. Config Git
-    ```console
-    wget https://github.com/dimka665/ubuntu-gnome/raw/master/files/.gitconfig -O git-config
-
-    ~/pycharm/bin/pycharm.sh merge git-config ~/.gitconfig ~/.gitconfig
-    ```
-
-15. Config sysctl
-    ```console
-    wget https://github.com/dimka665/ubuntu-gnome/raw/master/files/sysctl.conf
-    sudo ~/pycharm/bin/pycharm.sh merge sysctl.conf /etc/sysctl.conf /etc/sysctl.conf
-
-    sudo sysctl --load
+    ./restore.sh
     ```
 
 16. Config auto update
