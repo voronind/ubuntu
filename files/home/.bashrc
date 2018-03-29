@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -119,14 +119,18 @@ fi
 # Aptitude aliases
 alias ai='sudo aptitude install'
 alias ap='sudo aptitude purge'
-
 alias au='sudo aptitude update; sudo aptitude dist-upgrade'
 
 # Git aliases
 alias gg='git status'
 
-# Activate Virtualenvwrapper commands
-source `which virtualenvwrapper.sh`
+# Add local bin
+export PATH="~/.local/bin/:$PATH"
 
-# To enable local installed programs (pipenv)
-export PATH="$PATH:~/.local/bin/"
+# pyenv
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# pipenv
+eval "$(pipenv --completion)"
