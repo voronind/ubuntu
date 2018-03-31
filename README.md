@@ -42,7 +42,9 @@ Config Ubuntu GNOME after install
 
 5. Install packages for development
     ```console
-    sudo aptitude install -y git python3-dev
+    sudo aptitude install -y git git-flow
+    
+    sudo aptitude install -y python3-dev
     
     python3 -m pip install --user -U pip pipenv setuptools wheel twine keyring
     keyring set https://upload.pypi.org/legacy/ dimka.dimka
