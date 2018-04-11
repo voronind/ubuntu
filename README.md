@@ -81,7 +81,7 @@ Config Ubuntu GNOME after install
         rm google-chrome.deb
         ```
     - Google [DeaDBeeF](https://google.com/search?q=deadbeef+install)
-    - Google [Dropbox](https://google.com/search?q=deadbeef+install)
+    - Google [Dropbox](https://google.com/search?q=dropbox+install)
         or alternatively:
         ```console
         sudo aptitude install -y nautilus-dropbox
