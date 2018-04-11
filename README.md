@@ -51,16 +51,39 @@ Config Ubuntu GNOME after install
     sudo aptitude install -y build-essential
     sudo aptitude install -y git git-flow
     ```
+    
+4. Install PyCharm  
+    Google [PyCharm](https://google.com/search?q=pycharm+install).  
+    Put it to `~/pycharm/`. **We will use it to merge configs.**  
+    ```console
+    ~/pycharm/bin/pycharm.sh
+    ```
+    Turn off Gnome hot-keys
+    ```console
+    # Alt+LMB: Move window -> PyCharm Multicursor
+    gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier FF
+
+    # Alt+F7: Move window -> PyCharm Find usages
+    gsettings set org.gnome.desktop.wm.keybindings begin-move []
+
+    # Ctrl+Alt+Arrow: Switch workspace -> PyCharm Navigation
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
+
+    # Ctrl+Alt+S: Window toggle shaded -> PyCharm Settings
+    gsettings set org.gnome.desktop.wm.keybindings toggle-shaded []
+    ```
 
 4. Install Lua
     ```console
     sudo aptitude install -y lua5.3 luarocks
     ```
-    
-    Install [ZeroBrane Studio](https://studio.zerobrane.com/download).
-    
+    Install [Löve](https://google.com/search?q=love2d+install+ubuntu)  
+    Install [ZeroBrane Studio](https://studio.zerobrane.com/download)
     ```console
-    ./restore.sh ~/.zbstudio/user.lua
+    ./restore.sh copy ~/.zbstudio/user.lua
     ```
         
 5. Install Python packages
@@ -97,12 +120,6 @@ Config Ubuntu GNOME after install
         or alternatively:
         ```console
         sudo aptitude install -y nautilus-dropbox
-        ```
-    - Google [PyCharm](https://google.com/search?q=pycharm+install)  
-        Put to `~/pycharm/`. **We will use it to merge configs.**  
-        Run:
-        ```console
-        ~/pycharm/bin/pycharm.sh
         ```
 
 9. Uninstall packages
@@ -196,24 +213,6 @@ Config Ubuntu GNOME after install
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
     gsettings set org.gnome.nautilus.preferences default-sort-order name
     gsettings set org.gnome.nautilus.preferences default-folder-viewer list-view
-    ```
-    
-12. Turn off Gnome hot-keys
-    ```console
-    # Alt+LMB: Move window -> PyCharm Multicursor
-    gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier FF
-
-    # Alt+F7: Move window -> PyCharm Find usages
-    gsettings set org.gnome.desktop.wm.keybindings begin-move []
-
-    # Ctrl+Alt+Arrow: Switch workspace -> PyCharm Navigation
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
-
-    # Ctrl+Alt+S: Window toggle shaded -> PyCharm Settings
-    gsettings set org.gnome.desktop.wm.keybindings toggle-shaded []
     ```
 
 13. Restore files
