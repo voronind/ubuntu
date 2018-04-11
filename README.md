@@ -78,10 +78,14 @@ Config Ubuntu GNOME after install
 
 4. Install Lua
     ```console
-    sudo aptitude install -y lua5.3 luarocks
+    sudo aptitude install -y lua5.3 liblua5.3-dev
     ```
-    Install [Löve](https://google.com/search?q=love2d+install+ubuntu)  
-    Install [ZeroBrane Studio](https://studio.zerobrane.com/download)
+    
+    Install:
+    - [luarocks](https://google.com/search?q=luarocks+install)  
+    - [Löve](https://google.com/search?q=love2d+install)  
+    - [ZeroBrane Studio](https://studio.zerobrane.com/download)
+    
     ```console
     ./restore.sh copy ~/.zbstudio/user.lua
     ```
