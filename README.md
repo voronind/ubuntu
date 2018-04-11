@@ -36,14 +36,23 @@ Config Ubuntu GNOME after install
 
     sudo aptitude install -y ubuntu-restricted-extras
     sudo aptitude install -y vlc
-
     sudo aptitude install -y flac cuetools shntool      # Splitting FLAC
     ```
 
-5. Install packages for development
+4. Install packages for development
     ```console
+    sudo aptitude install -y build-essential
     sudo aptitude install -y git git-flow
+    ```
+
+4. Install Lua
+    ```console
+    sudo aptitude install -y lua5.3 luarocks
+    ```
+    Install [ZeroBrane Studio](https://studio.zerobrane.com/download).
     
+5. Install Python packages
+    ```console
     sudo aptitude install -y python3-dev
     
     python3 -m pip install --user -U pip pipenv setuptools wheel twine keyring
