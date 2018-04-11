@@ -53,7 +53,7 @@ Config Ubuntu GNOME after install
     ```
     
 4. Install PyCharm  
-    Google [PyCharm](https://google.com/search?q=pycharm+install).  
+    Search [PyCharm](https://google.com/search?q=pycharm+install).  
     Put it to `~/pycharm/`. **We will use it to merge configs.**  
     ```console
     ~/pycharm/bin/pycharm.sh
@@ -112,15 +112,15 @@ Config Ubuntu GNOME after install
     - [Suspend Button](https://extensions.gnome.org/extension/826/suspend-button/)
 
 8. Install programs
-    - Google [Google Chrome](https://google.com/search?q=google+chrome+install+linux)
+    - Search [Google Chrome](https://google.com/search?q=google+chrome+install+linux)
         or alternatively:
         ```console
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output-document=google-chrome.deb
         sudo dpkg -i google-chrome.deb
         rm google-chrome.deb
         ```
-    - Google [DeaDBeeF](https://google.com/search?q=deadbeef+install)
-    - Google [Dropbox](https://google.com/search?q=dropbox+install)
+    - Search [DeaDBeeF](https://google.com/search?q=deadbeef+install)
+    - Search [Dropbox](https://google.com/search?q=dropbox+install)
         or alternatively:
         ```console
         sudo aptitude install -y nautilus-dropbox
