@@ -17,7 +17,14 @@ Config Ubuntu GNOME after install
 
 2. Update OS
     ```console
-    sudo apt-get update && sudo apt-get dist-upgrade
+    sudo apt-get update
+    sudo apt-get dist-upgrade
+    ```
+
+2. Get restore.sh
+    ```console
+    wget https://github.com/dimka665/ubuntu/raw/master/restore.sh
+    chmod +x restore.sh
     ```
 
 3. Create swap file
@@ -49,8 +56,13 @@ Config Ubuntu GNOME after install
     ```console
     sudo aptitude install -y lua5.3 luarocks
     ```
+    
     Install [ZeroBrane Studio](https://studio.zerobrane.com/download).
     
+    ```console
+    ./restore.sh ~/.zbstudio/user.lua
+    ```
+        
 5. Install Python packages
     ```console
     sudo aptitude install -y python3-dev
