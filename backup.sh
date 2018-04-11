@@ -26,6 +26,7 @@ main() {
     backup ~/.cookiecutterrc
     backup ~/.gitconfig
     backup ~/.pypirc
+    backup ~/.zbstudio/user.lua
 }
 
 if [ -z "$1" ]; then
