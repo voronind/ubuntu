@@ -103,8 +103,8 @@ Config Ubuntu GNOME after install
     python3 -m pip install --user -U mutagen
     ```
     
-6. Install [pyenv](https://github.com/pyenv/pyenv)  
-    E.g. using [https://github.com/pyenv/pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation)
+    Install [pyenv](https://github.com/pyenv/pyenv)
+    (e.g. using [https://github.com/pyenv/pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation))
 
 7. Install Gnome Shell extensions
     - `sudo aptitude install -y chrome-gnome-shell`
