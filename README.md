@@ -77,18 +77,16 @@ Config Ubuntu GNOME after install
     ```
 
 4. Install Lua
-    ```console
-    sudo aptitude install -y lua5.3 liblua5.3-dev
-    ```
-    
-    Install:
-    - [luarocks](https://google.com/search?q=luarocks+install)  
+    - Install Lua and luarocks (1 of 2):
+        * `sudo aptitude install -y lua5.3 liblua5.3-dev`  
+          Install [luarocks](https://google.com/search?q=luarocks+install)
+          
+        * `sudo aptitude install -y luarocks`
     - [Löve](https://google.com/search?q=love2d+install)  
     - [ZeroBrane Studio](https://studio.zerobrane.com/download)
-    
-    ```console
-    ./restore.sh copy ~/.zbstudio/user.lua
-    ```
+      ```console
+      ./restore.sh copy ~/.zbstudio/user.lua
+      ```
         
 5. Install Python packages
     ```console
