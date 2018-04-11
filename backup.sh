@@ -11,7 +11,12 @@ backup() {
         local repo_path="$repo$path"
     fi
 
+    medium_dir="$(dirname $repo_path)"
+    test -d "$medium_dir" || mkdir -p "$medium_dir"
+
     cp "$path" "$repo_path"
+
+    git add "$repo_path"
 }
 
 main() {
