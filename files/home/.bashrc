@@ -134,3 +134,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # pipenv
 eval "$(pipenv --completion)"
+
+# luarocks
+eval "$(luarocks path --bin)"
