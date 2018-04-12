@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 # Aptitude aliases
 alias ai='sudo aptitude install'
 alias ap='sudo aptitude purge'
@@ -128,12 +132,20 @@ alias gg='git status'
 export PATH="~/.local/bin/:$PATH"
 
 # pyenv
-export PATH="~/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [ -d ~/.pyenv/bin ]; then
+    export PATH="~/.pyenv/bin:$PATH"
+fi
+if exists pyenv; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # pipenv
-eval "$(pipenv --completion)"
+if exists pipenv; then
+    eval "$(pipenv --completion)"
+fi
 
 # luarocks
-eval "$(luarocks path --bin)"
+if exists luarocks; then
+    eval "$(luarocks path --bin)"
+fi
