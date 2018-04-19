@@ -37,6 +37,7 @@ main() {
     get merge ~/.bashrc
     get merge ~/.cookiecutterrc
     get merge ~/.gitconfig
+    get merge ~/.luarocks/config.lua
     get merge ~/.pypirc
 
     get copy ~/.local/read-editor.sh  x

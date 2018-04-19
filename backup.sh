@@ -25,6 +25,7 @@ main() {
     backup ~/.bashrc
     backup ~/.cookiecutterrc
     backup ~/.gitconfig
+    backup ~/.luarocks/config.lua
     backup ~/.pypirc
     backup ~/.zbstudio/user.lua
 }

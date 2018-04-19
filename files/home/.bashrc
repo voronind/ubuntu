@@ -148,4 +148,17 @@ fi
 # luarocks
 if exists luarocks; then
     eval "$(luarocks path --bin)"
+
+    lr() {
+        local LUAROCKS_PROJECT_TREE='libs'
+
+        if [[ "$1" == 'install' && ! -d "$LUAROCKS_PROJECT_TREE" ]]; then
+            read -p "There is no '$LUAROCKS_PROJECT_TREE' dir. Continue? [y/N]: " -n1 -e LR_CONTINUE
+            if [[ "$LR_CONTINUE" != 'y' ]]; then
+               return
+            fi
+        fi
+
+        luarocks --tree="$LUAROCKS_PROJECT_TREE" $@
+    }
 fi
