@@ -95,7 +95,7 @@ Config Ubuntu GNOME after install
     python3 -m pip install --user -U pip pipenv setuptools wheel twine keyring
     keyring set https://upload.pypi.org/legacy/ dimka.dimka
     
-    python3 -m pip install --user -U ansible
+    python3 -m pip install --user ansible cookiecutter
 
     # install Renamer dependency
     python3 -m pip install --user -U mutagen
