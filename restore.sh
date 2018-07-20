@@ -40,7 +40,7 @@ main() {
     get merge ~/.luarocks/config.lua
     get merge ~/.pypirc
 
-    get copy ~/.local/read-editor.sh  x
+    get copy ~/.local/bin/read-editor.sh  x
     get copy ~/.local/share/nautilus/scripts/Rename  x
 
     touch ~/Templates/Text.txt

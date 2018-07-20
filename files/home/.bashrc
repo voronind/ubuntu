@@ -137,10 +137,11 @@ if [ -d ~/.pyenv/bin ]; then
 fi
 if exists pyenv; then
     eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
 fi
 
 # pipenv
+alias r='pipenv run'
+alias p='pipenv run python'
 if exists pipenv; then
     eval "$(pipenv --completion)"
 fi

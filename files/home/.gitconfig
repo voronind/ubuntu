@@ -3,4 +3,4 @@
     email = dimka665@gmail.com
 
 [core]
-    editor = ~/.local/read-editor.sh
+    editor = read-editor.sh
