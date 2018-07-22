@@ -3,4 +3,5 @@
     email = dimka665@gmail.com
 
 [core]
-    editor = read-editor.sh
+    editor = ~/.local/bin/read-editor.sh
+    hooksPath = .githooks
