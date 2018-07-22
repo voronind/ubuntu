@@ -125,6 +125,11 @@ alias ai='sudo aptitude install'
 alias ap='sudo aptitude purge'
 alias au='sudo aptitude update; sudo aptitude dist-upgrade'
 
+# Python
+pi() {
+  python3 -m pip install --user -U $@
+}
+
 # Git aliases
 alias gg='git status'
 
