@@ -88,21 +88,30 @@ Config Ubuntu GNOME after install
       ./restore.sh copy ~/.zbstudio/user.lua
       ```
         
-5. Install Python packages
+5. Python
     ```console
     sudo aptitude install -y python3-dev
     
-    python3 -m pip install --user -U pip pipenv setuptools wheel twine keyring
-    keyring set https://upload.pypi.org/legacy/ dimka.dimka
+    sudo python3 -m pip install -U pip setuptools wheel 
     
-    python3 -m pip install --user ansible cookiecutter
+    python3 -m pip install --user -U \
+        pipenv twine keyring ansible cookiecutter
+        
+    keyring set https://upload.pypi.org/legacy/ dimka.dimka
 
     # install Renamer dependency
     python3 -m pip install --user -U mutagen
     ```
     
+6. Pyenv
+
     Install [pyenv](https://github.com/pyenv/pyenv)
-    (e.g. using [https://github.com/pyenv/pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation))
+    (e.g. using [pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation))
+    
+    ```console
+    pyenv install 3.7
+    pyenv global system 3.7
+    ```
 
 7. Install Gnome Shell extensions
     - `sudo aptitude install -y chrome-gnome-shell`
