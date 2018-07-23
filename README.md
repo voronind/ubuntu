@@ -95,7 +95,7 @@ Config Ubuntu GNOME after install
     sudo python3 -m pip install -U pip setuptools wheel 
     
     python3 -m pip install --user -U \
-        pipenv twine keyring ansible cookiecutter
+        pipenv twine keyring tox ansible cookiecutter
         
     keyring set https://upload.pypi.org/legacy/ dimka.dimka
 
@@ -166,6 +166,7 @@ Config Ubuntu GNOME after install
     sudo aptitude purge -y gnome-calendar
 
     # Solitaire, Games
+    # sudo aptitude purge -y gnome-games-common
     sudo aptitude purge -y aisleriot gnome-sudoku gnome-mines gnome-mahjongg
 
     # Maps
