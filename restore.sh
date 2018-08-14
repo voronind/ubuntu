@@ -1,7 +1,7 @@
 #!/bin/bash
 
 merge="$HOME/pycharm/bin/pycharm.sh merge"
-repo=https://github.com/dimka665/ubuntu/raw/master/files
+repo=https://github.com/dimka665/ubuntu/raw/master/fs
 tmp=/tmp/wget-ubuntu
 
 get() {

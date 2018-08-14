@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo="$(dirname "$0")/files"
+repo="$(dirname "$0")/fs"
 
 backup() {
     local path="$1"
