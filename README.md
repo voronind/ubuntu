@@ -112,6 +112,14 @@ Config Ubuntu GNOME after install
     pyenv install 3.7
     pyenv global system 3.7
     ```
+    
+6. Node.js
+
+    Install [nvm](https://github.com/creationix/nvm#installation)
+    ```console
+    nvm install --lts --latest-npm
+    npm install --global @angular/cli
+    ```
 
 7. Install Gnome Shell extensions
     - `sudo aptitude install -y chrome-gnome-shell`
