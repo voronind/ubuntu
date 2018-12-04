@@ -13,7 +13,7 @@ Config Ubuntu GNOME after install
         - `.ssh/`
         - `.PyCharmYYYY.N/`
         
-1. Install OS
+1. Install Ubuntu with non-Russian repository servers.
 
 2. Update OS
     ```console
