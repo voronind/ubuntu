@@ -27,12 +27,14 @@ Config Ubuntu GNOME after install
     chmod +x restore.sh
     ```
 
-3. Create swap file
+3. Swap file
     ```console
-    sudo fallocate /swap --length 1G
-    sudo mkswap --check /swap
-    sudo chmod u=rw,g=,o= /swap
-    sudo swapon /swap
+    swapon --show
+    
+    sudo fallocate /swapfile --length 1G
+    sudo mkswap --check /swapfile
+    sudo chmod u=rw,g=,o= /swapfile
+    sudo swapon /swapfile
 
     swapon --show
     ```
