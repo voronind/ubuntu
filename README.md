@@ -98,17 +98,13 @@ Config Ubuntu GNOME after install
         
 5. Python
     ```console
-    sudo aptitude install -y python3-dev
+    sudo aptitude install -y python3-dev python3-pip
     
     sudo python3 -m pip install -U pip setuptools wheel 
     
-    python3 -m pip install --user -U \
-        pipenv twine keyring tox ansible cookiecutter
+    python3 -m pip install --user -U pipenv twine keyring tox ansible cookiecutter
         
     keyring set https://upload.pypi.org/legacy/ dimka.dimka
-
-    # install Renamer dependency
-    python3 -m pip install --user -U mutagen
     ```
     
 6. Pyenv
