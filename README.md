@@ -54,17 +54,23 @@ Config Ubuntu GNOME after install
     sudo aptitude install -y git git-flow
     ```
     
-4. Install PyCharm  
-    Search [PyCharm](https://google.com/search?q=pycharm+install).  
+4. PyCharm  
+    [Search](https://google.com/search?q=download+pycharm)
+    - Community edition
+        ```console
+        sudo snap install pycharm-community
+        ```
+    - Professional edition  
+        ```console
+        sudo snap install pycharm-professional
+        ```
+            
     Put it to `~/pycharm/`. **We will use it to merge configs.**  
     ```console
     ~/pycharm/bin/pycharm.sh
     ```
-    Turn off Gnome hot-keys
+    Turn off Gnome hot keys
     ```console
-    # Alt+LMB: Move window -> PyCharm Multicursor
-    gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier FF
-
     # Alt+F7: Move window -> PyCharm Find usages
     gsettings set org.gnome.desktop.wm.keybindings begin-move []
 
