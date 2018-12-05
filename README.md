@@ -215,23 +215,18 @@ Config Ubuntu GNOME after install
     mount --all
     ```
 
-12. Config Gnome Shell
+12. Gnome Shell
     ```console
-    gsettings list-recursively | grep "<Ctrl><Alt>"
+    gsettings list-recursively | grep ""
 
     # Switch language by Ctrl+Space
+    gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Ctrl>space']"
     gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward []
-    gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Control>Space']"
 
     # Workspaces
     gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
     gsettings set org.gnome.shell.overrides dynamic-workspaces false
-
-    # Favorite apps
-    gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'jetbrains-pycharm.desktop', 'nautilus.desktop', 'gnome-terminal.desktop']"
-
-    # Gedit
-    gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
+    gsettings set org.gnome.mutter dynamic-workspaces false
 
     # Nautilus
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
