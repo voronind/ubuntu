@@ -222,6 +222,11 @@ Config Ubuntu GNOME after install
     # Switch language by Ctrl+Space
     gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Ctrl>space']"
     gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward []
+    
+    # Set Compose key
+    # check before setting:
+    gsettings get org.gnome.desktop.input-sources xkb-options
+    gsettings set org.gnome.desktop.input-sources xkb-options [\'compose:caps\']
 
     # Workspaces
     gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
