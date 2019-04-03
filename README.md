@@ -109,7 +109,7 @@ Config Ubuntu GNOME after install
     
 6. Pyenv
 
-    Install [pyenv](https://github.com/pyenv/pyenv)
+    Install [pyenv](https://github.com/pyenv/pyenv#installation)
     (e.g. using [pyenv-installer](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation))
     
     ```console
