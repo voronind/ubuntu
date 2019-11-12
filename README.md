@@ -71,6 +71,9 @@ Config Ubuntu GNOME after install
     ```
     Turn off Gnome hot keys
     ```console
+    # Alt+F1: Main menu
+    gsettings set org.gnome.desktop.wm.keybindings panel-main-menu []
+    
     # Alt+F7: Move window -> PyCharm Find usages
     gsettings set org.gnome.desktop.wm.keybindings begin-move []
 
