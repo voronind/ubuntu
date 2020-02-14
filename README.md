@@ -71,19 +71,22 @@ Config Ubuntu GNOME after install
     ```
     Turn off Gnome hot keys
     ```console
-    # Alt+F1: Main menu
+    # Alt+F1: Main menu                 Select in
     gsettings set org.gnome.desktop.wm.keybindings panel-main-menu []
     
-    # Alt+F7: Move window -> PyCharm Find usages
+    # Alt+F7: Begin move                Find usages
     gsettings set org.gnome.desktop.wm.keybindings begin-move []
+    
+    # Alt+F8: Begin resize              Evaluate expression
+    gsettings set org.gnome.desktop.wm.keybindings begin-resize []
 
-    # Ctrl+Alt+Arrow: Switch workspace -> PyCharm Navigation
+    # Ctrl+Alt+Arrow: Switch workspace  Navigation
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
 
-    # Ctrl+Alt+S: Window toggle shaded -> PyCharm Settings
+    # Ctrl+Alt+S: Window toggle shaded  Settings
     gsettings set org.gnome.desktop.wm.keybindings toggle-shaded []
     ```
 
