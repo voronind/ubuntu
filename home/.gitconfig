@@ -5,3 +5,12 @@
 [core]
     editor = ~/.local/bin/read-editor.sh
     hooksPath = .githooks
+
+[fetch]
+    prune = true
+
+[merge]
+    ff = only
+
+[push]
+    default = simple
