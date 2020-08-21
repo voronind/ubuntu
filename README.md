@@ -1,30 +1,36 @@
 Config Ubuntu GNOME after install
 =================================
 
-0. **Before OS install**
+<!--
+Установить программы (файлы настроек)
+Скачать репозиторий (файлы настроек)
+Установить Pycharm
+Смержить
+-->
+
+1. Preparation
     - Backup files
         ```console
-        ./baskup.sh
-        git add .
-        git commit
+        ./backup.sh
+        git commit --all -m 'Backup home/root files'
         git push
         ```
     - Keep files
         - `.ssh/`
         - `.PyCharmYYYY.N/`
         
-1. Install Ubuntu with non-Russian repository servers.
+1. Install Ubuntu
 
 2. Update OS
     ```console
     sudo apt-get update
     sudo apt-get dist-upgrade
+    sudo apt-get install git
     ```
 
 2. Get restore.sh
-    ```console
-    wget https://github.com/dimka665/ubuntu/raw/master/restore.sh
-    chmod +x restore.sh
+    ```
+    git clone https://github.com/dimka665/ubuntu && cd ubuntu
     ```
 
 3. Swap file
@@ -39,13 +45,19 @@ Config Ubuntu GNOME after install
     swapon --show
     ```
 
-4. Install packages
+4. Deb Packages
     ```console
     sudo apt-get install -y aptitude
 
     sudo aptitude install -y ubuntu-restricted-extras
     sudo aptitude install -y vlc
     sudo aptitude install -y flac cuetools shntool      # Splitting FLAC
+    ```
+
+5. [Bash-it](https://github.com/Bash-it/bash-it)
+    ```console
+    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+    ~/.bash_it/install.sh --no-modify-config
     ```
 
 4. Install packages for development
