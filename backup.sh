@@ -1,38 +1,21 @@
 #!/bin/bash
 
-repo="$(dirname "$0")/fs"
+PROJECT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
 
-backup() {
-    local path="$1"
+backup_dir() {
+    local from_dir="$1"
+    local to_dir="$PROJECT_DIR/$2"
 
-    if [[ $path == ~/* ]]; then
-        local repo_path="$repo/home${path#"$HOME"}"
-    else
-        local repo_path="$repo$path"
-    fi
-
-    medium_dir="$(dirname $repo_path)"
-    test -d "$medium_dir" || mkdir -p "$medium_dir"
-
-    cp "$path" "$repo_path"
-
-    git add "$repo_path"
+    for sub_path in $(find "$to_dir" -type f -printf '%P\n')
+    do
+        if [[ -f "$from_dir/$sub_path" ]]; then
+            cp "$from_dir/$sub_path" "$to_dir/$sub_path"
+        fi
+    done
 }
 
-main() {
-    backup /etc/fstab
-    backup /etc/sysctl.conf
-    backup ~/.bashrc
-    backup ~/.cookiecutterrc
-    backup ~/.gitconfig
-    backup ~/.local/bin/read-editor.sh
-    backup ~/.luarocks/config.lua
-    backup ~/.pypirc
-    backup ~/.zbstudio/user.lua
-}
-
-if [ -z "$1" ]; then
-    main
-else
-    backup "$1"
+# Script was run (not sourced)
+if [[ "$BASH_SOURCE" == "$0" ]]; then
+    backup_dir "$HOME" home
+    backup_dir / root
 fi
