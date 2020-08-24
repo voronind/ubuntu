@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -o errexit
+
+git fetch origin master:master
+
+if [[ $(git rev-parse master) != $(git rev-parse origin/master) ]]; then
+    echo 'Branches master and origin/master are different'
+    exit 1
+fi;
+
+git checkout -b "$1" master
