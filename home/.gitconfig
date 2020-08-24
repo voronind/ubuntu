@@ -3,7 +3,7 @@
     email = dimka665@gmail.com
 
 [core]
-    editor = ~/.local/bin/read-editor.sh
+    editor = read-editor.sh
     hooksPath = .githooks
 
 [fetch]
