@@ -2,7 +2,22 @@
 
 PROJECT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
 
-backup_dir() {
+
+backup-file() {
+    local src_path="$(realpath "$1")"
+    local dest_path
+
+    if [[ "$src_path" == "$HOME"/* ]]; then
+        dest_path="$PROJECT_DIR/home${src_path#"$HOME"}"
+    else
+        dest_path="$PROJECT_DIR/root$src_path"
+    fi
+
+    mkdir --parents "$(dirname "$dest_path")"
+    cp "$src_path" "$dest_path"
+}
+
+backup-dir() {
     local from_dir="$1"
     local to_dir="$PROJECT_DIR/$2"
 
@@ -16,6 +31,10 @@ backup_dir() {
 
 # Script was run (not sourced)
 if [[ "$BASH_SOURCE" == "$0" ]]; then
-    backup_dir "$HOME" home
-    backup_dir / root
+    if [[ -z "$1" ]]; then
+        backup-dir "$HOME" home
+        backup-dir / root
+    else
+        backup-file "$1"
+    fi
 fi
