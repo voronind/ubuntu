@@ -15,6 +15,7 @@ backup-file() {
 
     mkdir --parents "$(dirname "$dest_path")"
     cp "$src_path" "$dest_path"
+    git add "$dest_path"
 }
 
 backup-dir() {
