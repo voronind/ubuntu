@@ -2,15 +2,14 @@
     name = Dmitry Voronin
     email = dimka665@gmail.com
 
-[core]
-    editor = read-editor.sh
-    hooksPath = .githooks
-
 [fetch]
+    # Before fetching, remove any remote-tracking references that no longer exist on the remote.
     prune = true
 
 [merge]
+    # Fast-forward
     ff = only
 
 [push]
+    # Pushes the current branch with the same name on the remote
     default = simple
