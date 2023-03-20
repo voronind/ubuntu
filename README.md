@@ -197,3 +197,9 @@ Ubuntu Reinstallation
     gsettings set org.gnome.nautilus.preferences default-sort-order name
     gsettings set org.gnome.nautilus.preferences default-folder-viewer list-view
     ```
+
+13. Gnome Shell Extensions
+    ```console
+    sudo apt install gnome-shell-extension-manager
+    ```
+    Install `Dash to panel` extension
