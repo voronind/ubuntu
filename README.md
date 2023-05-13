@@ -193,7 +193,7 @@ Ubuntu Reinstallation
     gsettings set org.gnome.mutter dynamic-workspaces false
 
     # Nautilus
-    gsettings set org.gnome.nautilus.preferences sort-directories-first true
+    # gsettings set org.gnome.nautilus.preferences sort-directories-first true
     gsettings set org.gnome.nautilus.preferences default-sort-order name
     gsettings set org.gnome.nautilus.preferences default-folder-viewer list-view
     ```
@@ -202,4 +202,23 @@ Ubuntu Reinstallation
     ```console
     sudo apt install gnome-shell-extension-manager
     ```
-    Install `Dash to panel` extension
+    Run `Extension Manager`
+    
+    - Install `Bring Out Submenu Of Power Off/Logout Button` extension
+      Arrange Menu Items Order: [1, 2, 3, 9, __7__, 4, 5, 10, 6, 8]
+    
+    - Install `Dash to panel` extension
+    
+      `Position` tab
+      - Panel screen position: `Left`
+      - Show Application buttons: uncheck `Visible`
+      - Desktop button: uncheck `Visible`
+      
+      `Style` tab
+      - App icon margin: `0`      
+
+      `Behavior` tab
+      - Ungroup applications: `Checked`  
+        `Gear`
+        - Maximum width (px) of application titles: `80`
+        - Display running indicators on unfocused applications: `False`
