@@ -1,34 +1,15 @@
 #!/bin/bash
 
-merge="$HOME/pycharm/bin/pycharm.sh merge"
-repo=https://github.com/dimka665/ubuntu/raw/master/fs
-tmp=/tmp/wget-ubuntu
+copy_file() {
+    local source_path="$1"
 
-get() {
-    local action="$1"
-    local path="$2"
-    local mode="$3"
-
-    if [[ $path == ~/* ]]; then
-        local repo_path="$repo/home${path#"$HOME"}"
-    else
-        local repo_path="$repo$path"
-        local merge="sudo $merge"
+    if [[ "$source_path" =~ home/(.+) ]]; then
+        local dest_path="$HOME/${BASH_REMATCH[1]}"
+    elif [[ "$source_path" =~ root/(.+) ]]; then
+        local dest_path="/${BASH_REMATCH[1]}"
     fi
 
-    if [[ $action == "merge" ]]; then
-        wget $repo_path -O $tmp
-        $merge $path $tmp $path
-        rm $tmp
-    elif [[ $action == "copy" ]]; then
-        wget $repo_path -O $path
-    else
-        echo "You must specify 'merge' or 'copy' command."
-    fi
-
-    if [[ $mode == "x" ]]; then
-        chmod +x $path
-    fi
+    cp $source_path $dest_path
 }
 
 main() {
@@ -46,8 +27,4 @@ main() {
     touch ~/Templates/Text.txt
 }
 
-if [ -z "$1" ]; then
-    main
-else
-    get $1 "$2" $3
-fi
+copy_file "$1"

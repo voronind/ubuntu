@@ -6,5 +6,5 @@
 #
 # <file system>                             <mount point>       <type>	<options>                                                   <dump>  <pass>
 UUID=dd82ca76-12e9-48fb-be35-7adc91681941   /                   ext4    noatime,nodiratime,errors=remount-ro,data=ordered,discard   0       1
-UUID=896ab2ce-c1d5-4b9f-9982-50a5718dc431   /media/voronin/data ext4    noatime,nodiratime,errors=remount-ro                        0       1
+#UUID=896ab2ce-c1d5-4b9f-9982-50a5718dc431   /media/voronin/data ext4    noatime,nodiratime,errors=remount-ro                        0       1
 #UUID=14734798CF7DA519                       /media/e            ntfs    noatime,nodiratime,errors=remount-ro                        0       1

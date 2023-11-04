@@ -4,7 +4,7 @@ Ubuntu Reinstallation
 1. Make bootable Flash drive
    ```console
    sudo fdisk --list
-   sudo dd bs=4M status=progress if=~/Downloads/ubuntu-22.04-desktop-amd64.iso of=/dev/sdX
+   sudo dd bs=4M status=progress oflag=sync if=~/Downloads/ubuntu-22.04-desktop-amd64.iso of=/dev/sdX
    ```
 
 1. Backup
@@ -64,9 +64,9 @@ Ubuntu Reinstallation
 
     swapon --show
     ```
-   Write to `/etc/sysctl.conf`: `vm.swappiness=1`
+   Set `vm.swappiness=1`:
    ```console
-   sudo nano /etc/sysctl.conf
+   sudo merge.sh root/etc/sysctl.conf
    sudo sysctl --load
    cat /proc/sys/vm/swappiness
    ```
@@ -158,21 +158,24 @@ Ubuntu Reinstallation
     - Search [DeaDBeeF](https://google.com/search?q=deadbeef+install)
 
 9. Dropbox
-  - [Install Dropbox](https://google.com/search?q=dropbox+install)
+    - [Install Dropbox](https://google.com/search?q=dropbox+install)
       or alternatively:
       ```console
       sudo apt install -y nautilus-dropbox
+      ```
+    - Create symbolic link to `projects` directory
+      ```console
+      ln --symbolic ~/Dropbox/projects/ ~/projects
       ```
 
 10. Install NVidia driver
     ```console
     ubuntu-drivers devices
-    sudo add-apt-repository ppa:ubuntu-x-swat/x-updates && sudo apt update
-    sudo apt install nvidia-340 nvidia-settings
+    # sudo add-apt-repository ppa:ubuntu-x-swat/x-updates && sudo apt update
+    sudo apt install nvidia-535 nvidia-settings
     sudo nvidia-xconfig
     ```
     Restart OS
-
 
 12. Gnome Settings
     ```console
